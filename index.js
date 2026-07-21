@@ -114,3 +114,10 @@ function renderFavorites() {
     favoritesList.appendChild(li);
   });
 }
+
+function removeFavorite(word) {
+  favorites = favorites.filter((f) => f.word !== word);
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+  renderFavorites();
+  updateSaveButton();
+}
