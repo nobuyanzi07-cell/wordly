@@ -121,3 +121,17 @@ function removeFavorite(word) {
   renderFavorites();
   updateSaveButton();
 }
+
+//fetch process
+
+function normalizeEntry(data) {
+  const first = data[0];
+  const phoneticObj = first.phonetics.find((p) => p.text) || first.phonetics[0];
+  return {
+    word: first.word,
+    phonetic: first.phonetic || phoneticObj?.text || "",
+    sourceUrl: first.sourceUrls?.[0] || `${API_BASE}/${first.word}`,
+    meanings: first.meanings,
+  };
+}
+
