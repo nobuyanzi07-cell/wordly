@@ -20,4 +20,53 @@ const FAVORITES_KEY = "wordly:favorites";
 
 let currentEntry = null;
 let favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+
+//Rendering
+
+function showLoading(isLoading) {
+  loadingMessage.hidden = !isLoading;
+  if (isLoading) { errorMessage.hidden = true; resultEl.hidden = true; }
+}
+
+function showError(message) {
+  errorMessage.textContent = message;
+  errorMessage.hidden = false;
+  resultEl.hidden = true;
+}
+
+function renderMeanings(meanings) {
+  meaningsEl.innerHTML = "";
+  meanings.forEach((meaning) => {
+    const block = document.createElement("div");
+    block.className = "meaning";
  
+    const pos = document.createElement("span");
+    pos.className = "meaning__pos";
+    pos.textContent = meaning.partOfSpeech || "unknown";
+    block.appendChild(pos);
+ 
+    const list = document.createElement("ol");
+    list.className = "meaning__list";
+    meaning.definitions.slice(0, 3).forEach((def) => {
+      const li = document.createElement("li");
+      li.textContent = def.definition;
+      if (def.example) {
+        const ex = document.createElement("div");
+        ex.className = "meaning__example";
+        ex.textContent = `“${def.example}”`;
+        li.appendChild(ex);
+      }
+      list.appendChild(li);
+    });
+    block.appendChild(list);
+ 
+    if (meaning.synonyms && meaning.synonyms.length) {
+      const syn = document.createElement("p");
+      syn.className = "meaning__synonyms";
+      syn.innerHTML = `Synonyms: <span>${meaning.synonyms.slice(0, 6).join(", ")}</span>`;
+      block.appendChild(syn);
+    }
+ 
+    meaningsEl.appendChild(block);
+  });
+}
