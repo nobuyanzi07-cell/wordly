@@ -161,3 +161,27 @@ async function lookUpWord(rawWord) {
     showLoading(false);
   }
 }
+
+//event
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  lookUpWord(wordInput.value);
+});
+ 
+saveWordBtn.addEventListener("click", () => {
+  if (!currentEntry) return;
+  const isSaved = favorites.some((f) => f.word === currentEntry.word);
+  if (isSaved) {
+    removeFavorite(currentEntry.word);
+  } else {
+    favorites.push({ word: currentEntry.word });
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+    renderFavorites();
+    updateSaveButton();
+  }
+});
+
+//initialization
+renderFavorites();
+wordInput.focus();
