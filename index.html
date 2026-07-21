@@ -29,5 +29,23 @@
     <div class="layout">
  
       <main class="entry-column">
+      // Search form
+        <form id="search-form" class="search" autocomplete="off">
+          <label for="word-input" class="search__label">Look up a word</label>
+          <div class="search__row">
+            <span class="search__guide" aria-hidden="true">§</span>
+            <input
+              id="word-input"
+              class="search__input"
+              type="text"
+              name="word"
+              placeholder="e.g. serendipity"
+              required
+            />
+            <button id="search-button" class="search__button" type="submit">Search</button>
+          </div>
+        </form>
+ 
+
 </body>
 </html>
