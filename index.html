@@ -18,7 +18,12 @@
           <p class="masthead__tagline">a running dictionary, kept by you</p>
         </div>
       </div>
-      
+
+    </header>
+
+    <div class="layout">
+        <main class="entry-column">
+
       <!--Search form-->
         <form id="search-form" class="search" autocomplete="off">
           <label for="word-input" class="search__label">Look up a word</label>
@@ -46,8 +51,6 @@
           <div class="entry__body">
             <div class="entry__headrow">
               <h2 id="word" class="entry__headword"></h2>
-              <button id="play-audio" class="entry__audio" type="button" hidden title="Play pronunciation">
-              </button>
               <button id="save-word" class="entry__save" type="button">
                 <span id="save-icon" aria-hidden="true">☆</span>
                 <span id="save-label">Save</span>
@@ -55,7 +58,7 @@
             </div>
  
             <p id="phonetic" class="entry__phonetic"></p>
-            // Meanings list
+            <!--Meanings list-->
             <div id="meanings" class="meanings"></div>
  
             <p class="entry__source">
@@ -76,6 +79,6 @@
     </div>
   </div>
  
-  <script src="./index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
