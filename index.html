@@ -48,7 +48,23 @@
         // Error message
             <p id="error-message" class="status status--error" hidden></p>
             <p id="loading-message" class="status status--loading" hidden>Turning pages…</p>
+        // Entry results
+           <article id="result" class="entry" hidden>
  
-
+          <div class="entry__rule" aria-hidden="true"></div>
+ 
+          <div class="entry__body">
+            <div class="entry__headrow">
+              <h2 id="word" class="entry__headword"></h2>
+              <button id="play-audio" class="entry__audio" type="button" hidden title="Play pronunciation">
+              </button>
+              <button id="save-word" class="entry__save" type="button">
+                <span id="save-icon" aria-hidden="true">☆</span>
+                <span id="save-label">Save</span>
+              </button>
+            </div>
+ 
+            <p id="phonetic" class="entry__phonetic"></p>
+ 
 </body>
 </html>
