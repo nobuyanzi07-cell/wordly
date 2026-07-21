@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-// Page Shell
+  <!--Page Shell-->
     <div class="page">
  
     <header class="masthead">
@@ -19,7 +19,7 @@
         </div>
       </div>
     
-      // Theme toggle
+      <!--Theme toggle-->
     <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
         <span class="theme-toggle__icon" aria-hidden="true">●</span>
         <span class="theme-toggle__label">Night page</span>
@@ -29,7 +29,7 @@
     <div class="layout">
  
       <main class="entry-column">
-      // Search form
+      <!--Search form-->
         <form id="search-form" class="search" autocomplete="off">
           <label for="word-input" class="search__label">Look up a word</label>
           <div class="search__row">
@@ -45,10 +45,10 @@
             <button id="search-button" class="search__button" type="submit">Search</button>
           </div>
         </form>
-        // Error message
+        <!--Error message-->
             <p id="error-message" class="status status--error" hidden></p>
             <p id="loading-message" class="status status--loading" hidden>Turning pages…</p>
-        // Entry results
+        <!--Entry results-->
            <article id="result" class="entry" hidden>
  
           <div class="entry__rule" aria-hidden="true"></div>
@@ -76,7 +76,7 @@
         </article>
  
       </main>
-      // Favorites sidebar
+      <!--Favorites sidebar-->
       <aside class="favorites">
         <h2 class="favorites__title">Bookmarked words</h2>
         <p id="favorites-empty" class="favorites__empty">Words you save will collect here.</p>

@@ -1,0 +1,36 @@
+:root {
+  --ink: #1b2430;
+  --ink-soft: #4b5568;
+  --paper: #ece8dd;
+  --paper-card: #f7f4ea;
+  --guide: #a32638;
+  --guide-soft: #c9727f;
+  --gold: #b8912b;
+  --rule: #cbc3ac;
+ 
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+ 
+  color-scheme: light;
+}
+
+/* dark */
+body.theme-dark {
+  --ink: #ece8dd;
+  --ink-soft: #b7b1a0;
+  --paper: #14181f;
+  --paper-card: #1c222c;
+  --guide: #e2758a;
+  --guide-soft: #c9727f;
+  --gold: #e0b94a;
+  --rule: #333c4a;
+  color-scheme: dark;
+}
+ 
+* { box-sizing: border-box; }
+ 
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
