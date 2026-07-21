@@ -11,3 +11,11 @@ an online language learning platform, wants to improve its user experience by pr
   4. Fetch logic (`lookUpWord`, `normalizeEntry`)
   5. Event listeners (search submit, save, favorites clicks)
   6. Init
+
+  ## API used
+ 
+[Free Dictionary API](https://dictionaryapi.dev/) — no API key required.
+ 
+```
+GET https://api.dictionaryapi.dev/api/v2/entries/en/<word>
+```
