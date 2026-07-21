@@ -90,3 +90,27 @@ function renderEntry(entry) {
   errorMessage.hidden = true;
 }
 
+function renderFavorites() {
+  favoritesList.innerHTML = "";
+  favoritesEmpty.hidden = favorites.length > 0;
+  favorites.forEach((fav) => {
+    const li = document.createElement("li");
+    li.className = "favorite-item";
+ 
+    const wordBtn = document.createElement("button");
+    wordBtn.className = "favorite-item__word";
+    wordBtn.type = "button";
+    wordBtn.textContent = fav.word;
+    wordBtn.addEventListener("click", () => lookUpWord(fav.word));
+ 
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "favorite-item__remove";
+    removeBtn.type = "button";
+    removeBtn.textContent = "✕";
+    removeBtn.setAttribute("aria-label", `Remove ${fav.word}`);
+    removeBtn.addEventListener("click", () => removeFavorite(fav.word));
+ 
+    li.append(wordBtn, removeBtn);
+    favoritesList.appendChild(li);
+  });
+}
