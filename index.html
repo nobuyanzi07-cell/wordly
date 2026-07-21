@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 // Page Shell
@@ -65,6 +65,27 @@
             </div>
  
             <p id="phonetic" class="entry__phonetic"></p>
+            // Meanings list
+            <div id="meanings" class="meanings"></div>
  
+            <p class="entry__source">
+              Source:
+              <a id="source-link" href="#" target="_blank" rel="noopener noreferrer">dictionaryapi.dev</a>
+            </p>
+          </div>
+        </article>
+ 
+      </main>
+      // Favorites sidebar
+      <aside class="favorites">
+        <h2 class="favorites__title">Bookmarked words</h2>
+        <p id="favorites-empty" class="favorites__empty">Words you save will collect here.</p>
+        <ul id="favorites-list" class="favorites__list"></ul>
+      </aside>
+ 
+    </div>
+  </div>
+ 
+  <script src="./index.js"></script>
 </body>
 </html>
