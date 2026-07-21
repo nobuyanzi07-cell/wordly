@@ -11,8 +11,6 @@
   --font-display: "Fraunces", serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
- 
-  color-scheme: light;
 }
 
 /* dark */
@@ -30,7 +28,5 @@ body.theme-dark {
  
 * { box-sizing: border-box; }
  
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
+
 
