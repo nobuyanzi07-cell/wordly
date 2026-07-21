@@ -70,3 +70,23 @@ function renderMeanings(meanings) {
     meaningsEl.appendChild(block);
   });
 }
+
+function updateSaveButton() {
+  if (!currentEntry) return;
+  const isSaved = favorites.some((f) => f.word === currentEntry.word);
+  saveWordBtn.classList.toggle("is-saved", isSaved);
+  saveIcon.textContent = isSaved ? "★" : "☆";
+  saveLabel.textContent = isSaved ? "Saved" : "Save";
+}
+
+function renderEntry(entry) {
+  currentEntry = entry;
+  wordEl.textContent = entry.word;
+  phoneticEl.textContent = entry.phonetic || "";
+  sourceLink.href = entry.sourceUrl || "#";
+  renderMeanings(entry.meanings);
+  updateSaveButton();
+  resultEl.hidden = false;
+  errorMessage.hidden = true;
+}
+
