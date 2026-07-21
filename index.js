@@ -135,3 +135,29 @@ function normalizeEntry(data) {
   };
 }
 
+async function lookUpWord(rawWord) {
+  const word = rawWord.trim().toLowerCase();
+  if (!word) return showError("Type a word to look it up.");
+ 
+  showLoading(true);
+  try {
+    const response = await fetch(`${API_BASE}/${encodeURIComponent(word)}`);
+    if (!response.ok) {
+      throw new Error(
+        response.status === 404
+          ? `No entry found for “${word}.” Check the spelling and try again.`
+          : "The dictionary service ran into a problem. Please try again."
+      );
+    }
+    renderEntry(normalizeEntry(await response.json()));
+    wordInput.value = "";
+  } catch (err) {
+    showError(
+      err instanceof TypeError
+        ? "Couldn’t reach the dictionary service. Check your connection and try again."
+        : err.message
+    );
+  } finally {
+    showLoading(false);
+  }
+}
